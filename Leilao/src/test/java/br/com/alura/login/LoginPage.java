@@ -1,9 +1,11 @@
-package br.com.alura.leilao.leilao;
+package br.com.alura.login;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import br.com.alura.leiloes.LeiloesPage;
 
 public class LoginPage {
 	
@@ -32,9 +34,10 @@ public class LoginPage {
 		browser.findElement(By.id("password")).sendKeys(password);
 	}
 
-	public void efetuarLogin() {		
+	public LeiloesPage efetuarLogin() {		
 		//Buscando o formulario pelo seu ID e submetendo ele
 		browser.findElement(By.id("login-form")).submit();
+		return new LeiloesPage(browser); //Quando este método for chamado ele irá retornar uma nova instancia de LeiloesPage, passando o navegador que já está aberto como parametro 
 	}
 
 	public boolean isPaginaDeLogin() {
