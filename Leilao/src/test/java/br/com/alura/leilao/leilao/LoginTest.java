@@ -74,4 +74,12 @@ public class LoginTest {
 		//Esperando um erro, buscando um ID que não contém no código e esperando que retorne a exception determianda
 		Assert.assertThrows(NoSuchElementException.class,  () -> browser.findElement(By.id("usuario-logado")));
 	}
+	
+	@Test
+	public void naoDeveriaAcessarPaginaRestridaSemEstarLogado() {
+		this.browser.navigate().to("http://localhost:8080/leiloes/2");
+
+		Assert.assertTrue(browser.getCurrentUrl().equals(URL_LOGIN));
+		Assert.assertFalse(browser.getPageSource().contains("Dados do Leilão"));
+	}
 }
