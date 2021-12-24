@@ -1,4 +1,4 @@
-package br.com.alura.leiloes;
+package br.com.alura.leilao.leiloes;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -6,7 +6,8 @@ import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import br.com.alura.login.LoginPage;
+
+import br.com.alura.leilao.login.LoginPage;
 
 public class LeiloesTest {
 	private LeiloesPage paginaDeLeiloes;

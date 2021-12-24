@@ -1,20 +1,16 @@
-package br.com.alura.leiloes;
+package br.com.alura.leilao.leiloes;
 
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.WebDriver;
 
-public class CadastroLeilaoPage {
+import br.com.alura.leilao.PageObject;
+
+public class CadastroLeilaoPage extends PageObject{
 
 	private static final String URL_CADASTRO_LEILAO = "http://localhost:8080/leiloes/new";
-	private WebDriver browser;
 	
 	public CadastroLeilaoPage(WebDriver browser) { //Recebe em seu constructor o navegador que está sendo usado nos teste anteriores
-		this.browser = browser; //Define como seu navegador
-	}
-
-	public void fechar() {
-		this.browser.quit();
+		super(browser); //Define como seu navegador
 	}
 
 	public LeiloesPage cadastrarLeilao(String nome, String valorInicial, String dataAbertura) {

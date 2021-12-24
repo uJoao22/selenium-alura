@@ -1,4 +1,4 @@
-package br.com.alura.login;
+package br.com.alura.leilao.login;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;

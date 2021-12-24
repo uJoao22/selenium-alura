@@ -18,6 +18,6 @@ public class HelloWorldSelenium {
 		browser.navigate().to("http://localhost:8080/leiloes"); //Chrome, navegue para o endereço determinado
 		
 		//Fechando o navegador
-//		browser.quit();
+		browser.quit();
 	}
 }
