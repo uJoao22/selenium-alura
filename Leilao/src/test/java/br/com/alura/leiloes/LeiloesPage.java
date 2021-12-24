@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 public class LeiloesPage {
 	
 	private static final String URL_CADASTRO_LEILAO = "http://localhost:8080/leiloes/new";
+	private static final String URL_LEILOES = "http://localhost:8080/leiloes";
 	private WebDriver browser;
 	
 	public LeiloesPage(WebDriver browser) { //No constructor da class LeiloesPage ela recebe o navegador que estava sendo usado nos testes de login
@@ -33,5 +34,10 @@ public class LeiloesPage {
 		return colunaNome.getText().equals(nome) 
 				&& colunaDataAbertura.getText().equals(dataAbertura) 
 				&& colunaValorInicial.getText().equals(valorInicial);
+	}
+
+	public boolean isPaginaAtual() {
+		//Verificando se a URL que o navegador está é a mesma da variavel URL_LEILOES
+		return browser.getCurrentUrl().equals(URL_LEILOES);
 	}
 }
